@@ -23,8 +23,7 @@ export default function LetsTalk() {
             About Us
           </span>
           <h2
-            className="font-syne font-extrabold text-white text-4xl md:text-5xl leading-tight"
-            style={{ letterSpacing: '-0.02em' }}
+            className="font-syne font-bold text-white text-4xl md:text-5xl leading-[1.2] tracking-wide"
           >
             We turn visions into<br />living experiences.
           </h2>
@@ -37,7 +36,7 @@ export default function LetsTalk() {
           className="flex flex-col justify-end"
         >
           <p className="font-inter text-sm text-gray-400 leading-relaxed mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            We partner with visionary brands to create impactful digital and physical experiences. Let's collaborate to bring your next big idea to life with precision and artistic excellence.
           </p>
           <div className="flex gap-8">
             {[['12+', 'Years'], ['240+', 'Projects'], ['3', 'Continents']].map(([num, label]) => (
@@ -110,7 +109,7 @@ export default function LetsTalk() {
             Andalasia Creative
           </span>
           <span className="text-gray-700 text-xs">·</span>
-          <span className="font-inter text-[10px] text-gray-700 tracking-wide">© 2024 All rights reserved.</span>
+          <span className="font-inter text-[10px] text-gray-700 tracking-wide">© 2026 All rights reserved.</span>
         </div>
 
         <div className="flex items-center gap-6">

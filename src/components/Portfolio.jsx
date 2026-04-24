@@ -6,55 +6,43 @@ const projects = [
     id: 1,
     title: 'Aurora Gala',
     category: 'Event Management',
-    year: '2024',
+    year: '2026',
     imageUrl: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80',
-    span: 'row-span-2',
-    aspect: 'aspect-[3/4]',
   },
   {
     id: 2,
     title: 'Noir Campaign',
     category: 'Content Production',
-    year: '2024',
+    year: '2026',
     imageUrl: 'https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?w=800&q=80',
-    span: '',
-    aspect: 'aspect-[4/3]',
   },
   {
     id: 3,
     title: 'Pulse Festival',
     category: 'Event Management',
-    year: '2023',
+    year: '2026',
     imageUrl: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80',
-    span: '',
-    aspect: 'aspect-[4/3]',
   },
   {
     id: 4,
     title: 'Obsidian Film',
     category: 'Content Production',
-    year: '2024',
+    year: '2026',
     imageUrl: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&q=80',
-    span: 'row-span-2',
-    aspect: 'aspect-[3/4]',
   },
   {
     id: 5,
     title: 'Zenith Summit',
     category: 'Event Management',
-    year: '2023',
+    year: '2026',
     imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
-    span: '',
-    aspect: 'aspect-[4/3]',
   },
   {
     id: 6,
     title: 'Velvet Studio',
     category: 'Content Production',
-    year: '2024',
+    year: '2026',
     imageUrl: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80',
-    span: '',
-    aspect: 'aspect-[4/3]',
   },
 ];
 
@@ -68,50 +56,29 @@ function PortfolioCard({ project, delay }) {
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.9, delay, ease: [0.76, 0, 0.24, 1] }}
-      className={`portfolio-card group relative cursor-none ${project.span}`}
+      className="portfolio-card group relative overflow-hidden"
     >
-      {/* Image wrapper with clip-path reveal effect */}
-      <div className={`portfolio-image-wrapper w-full ${project.aspect} overflow-hidden relative`}>
-        {/* Grayscale base layer */}
+      <div className="w-full aspect-[4/3] overflow-hidden relative">
         <img
           src={project.imageUrl}
           alt={project.title}
-          className="portfolio-image-bw absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105"
           loading="lazy"
         />
-        {/* Color overlay layer that reveals from bottom */}
-        <div className="portfolio-image-color absolute inset-0">
-          <img
-            src={project.imageUrl}
-            alt={project.title}
-            className="w-full h-full object-cover"
-            loading="lazy"
-            style={{
-              transform: 'inherit',
-              transition: 'transform 0.7s cubic-bezier(0.76, 0, 0.24, 1)',
-            }}
-          />
-        </div>
 
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all duration-700 z-10" />
+        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all duration-700 z-10" />
 
         {/* Project info overlay */}
-        <div className="absolute inset-0 z-20 flex flex-col justify-end p-5 md:p-6">
-          <motion.div
-            className="overflow-hidden"
-          >
-            <div
-              className="translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out"
-            >
-              <span className="font-inter text-[10px] tracking-[0.25em] uppercase text-white/70 block mb-1">
-                {project.category} · {project.year}
-              </span>
-              <h4 className="font-syne font-bold text-white text-xl md:text-2xl leading-tight">
-                {project.title}
-              </h4>
-            </div>
-          </motion.div>
+        <div className="absolute inset-0 z-20 flex flex-col justify-end p-6">
+          <div className="translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+            <span className="font-inter text-[10px] tracking-[0.25em] uppercase text-white/90 block mb-2">
+              {project.category} · {project.year}
+            </span>
+            <h4 className="font-syne font-bold text-white text-2xl leading-tight">
+              {project.title}
+            </h4>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -160,9 +127,9 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* Asymmetric masonry grid */}
-      <div className="p-4 md:p-6">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-auto">
+      {/* Clean 2-column or 3-column CSS grid */}
+      <div className="p-4 md:p-6 md:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <PortfolioCard
               key={project.id}

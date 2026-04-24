@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import LetsTalk from './components/LetsTalk';
+import Testimonials from './components/Testimonials';
 
 function CustomCursor() {
   const dotRef = useRef(null);
@@ -72,6 +73,7 @@ export default function App() {
         <Hero />
         <Services />
         <Portfolio />
+        <Testimonials />
         <LetsTalk />
       </main>
     </div>

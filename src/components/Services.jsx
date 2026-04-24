@@ -8,7 +8,7 @@ const services = [
     category: 'Event Management',
     tagline: 'Moments that transcend the ordinary.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+      'We orchestrate unforgettable experiences through meticulous planning and innovative design, connecting brands with their audiences in meaningful ways.',
     items: [
       { icon: CalendarDays, label: 'Corporate Events' },
       { icon: Mic2, label: 'Concerts & Live Shows' },
@@ -21,7 +21,7 @@ const services = [
     category: 'Content Production',
     tagline: 'Visuals that compel and endure.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+      'We craft compelling visual narratives that resonate. From concept to post-production, we deliver cinematic quality that elevates your brand.',
     items: [
       { icon: Clapperboard, label: 'Commercial Film' },
       { icon: Camera, label: 'Photography' },

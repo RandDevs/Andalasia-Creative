@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const HEADLINE_WORDS = ['WE', 'DEFINE', 'VISUAL', 'EXCELLENCE.'];
+const HEADLINE_WORDS = ['WE', 'CRAFT', 'VISUAL', 'IMPACT.'];
 
 const wordVariants = {
   hidden: { y: '110%', opacity: 0 },
@@ -52,7 +52,7 @@ export default function Hero() {
     <section
       ref={heroRef}
       id="hero"
-      className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-[#050505]"
+      className="relative min-h-screen flex flex-col justify-end overflow-x-hidden bg-[#050505]"
     >
       {/* Cursor-tracked radial glow */}
       <div
@@ -73,7 +73,7 @@ export default function Hero() {
           Creative Production House
         </p>
         <p className="font-inter text-[10px] tracking-[0.2em] uppercase text-gray-600 mt-1">
-          Est. 2024
+          Est. 2026
         </p>
       </motion.div>
 
@@ -85,7 +85,7 @@ export default function Hero() {
         className="absolute bottom-36 left-8 md:left-16 max-w-xs"
       >
         <p className="font-inter text-xs text-gray-500 leading-relaxed tracking-wide">
-          Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit, sed do eiusmod tempor.
+          Creating immersive events and high-quality<br />visual storytelling that leaves a lasting impression.
         </p>
       </motion.div>
 
@@ -117,18 +117,19 @@ export default function Hero() {
           </motion.span>
         </div>
 
-        <div className="flex flex-wrap gap-x-5 md:gap-x-8 overflow-hidden">
+        <div className="flex flex-col">
           {HEADLINE_WORDS.map((word, i) => (
-            <div key={word} className="overflow-hidden">
+            <div key={word} className="overflow-hidden pb-4 -mb-4">
               <motion.span
                 custom={i}
                 variants={wordVariants}
                 initial="hidden"
                 animate="visible"
-                className="block font-syne font-extrabold text-white leading-[0.9] select-none"
+                className="block font-syne font-extrabold text-white select-none"
                 style={{
-                  fontSize: 'clamp(4rem, 12vw, 11rem)',
+                  fontSize: 'clamp(2.5rem, 11vw, 11rem)',
                   letterSpacing: '-0.02em',
+                  lineHeight: 0.92,
                 }}
               >
                 {word}
