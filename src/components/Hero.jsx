@@ -52,7 +52,7 @@ export default function Hero() {
     <section
       ref={heroRef}
       id="hero"
-      className="relative min-h-screen flex flex-col justify-end overflow-x-hidden bg-[#050505]"
+      className="relative min-h-screen flex flex-col overflow-x-hidden bg-[#050505]"
     >
       {/* Cursor-tracked radial glow */}
       <div
@@ -82,7 +82,7 @@ export default function Hero() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.9, duration: 0.6 }}
-        className="absolute bottom-36 left-8 md:left-16 max-w-xs"
+        className="hidden md:block absolute bottom-36 md:left-16 max-w-xs"
       >
         <p className="font-inter text-xs text-gray-500 leading-relaxed tracking-wide">
           Creating immersive events and high-quality<br />visual storytelling that leaves a lasting impression.
@@ -94,7 +94,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.2, duration: 0.8 }}
-        className="absolute bottom-36 right-8 md:right-16 flex flex-col items-end gap-2"
+        className="hidden md:flex absolute bottom-36 md:right-16 flex-col items-end gap-2"
       >
         <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gray-600">Scroll</span>
         <motion.div
@@ -105,7 +105,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Main headline */}
-      <div className="relative z-10 px-8 md:px-16 pb-12 md:pb-16">
+      <div className="relative z-10 px-8 md:px-16 pb-12 md:pb-16 flex-grow flex flex-col justify-center md:justify-end pt-24 md:pt-0">
         <div className="overflow-hidden mb-4">
           <motion.span
             initial={{ opacity: 0, x: -10 }}
@@ -137,6 +137,16 @@ export default function Hero() {
             </div>
           ))}
         </div>
+
+        {/* Mobile descriptor */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.9, duration: 0.6 }}
+          className="md:hidden font-inter text-xs text-gray-400 leading-relaxed tracking-wide mt-8 max-w-sm"
+        >
+          Creating immersive events and high-quality<br />visual storytelling that leaves a lasting impression.
+        </motion.p>
       </div>
 
       {/* Marquee ticker */}

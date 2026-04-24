@@ -52,7 +52,7 @@ export default function LetsTalk() {
       {/* LET'S TALK */}
       <div
         ref={ref}
-        className="relative px-8 md:px-16 py-32 md:py-48 overflow-hidden flex flex-col items-start"
+        className="relative px-8 md:px-16 py-20 md:py-28 overflow-hidden flex flex-col items-start w-full"
       >
         {/* Large background text */}
         <div
@@ -71,13 +71,13 @@ export default function LetsTalk() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-          className="relative z-10"
+          className="relative z-10 w-full"
         >
-          <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gray-600 block mb-8">
+          <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gray-600 block mb-6">
             Start a Project
           </span>
           <h2
-            className="font-syne font-extrabold text-white leading-[0.88] mb-10"
+            className="font-syne font-extrabold text-white leading-[0.88] mb-8"
             style={{
               fontSize: 'clamp(3.5rem, 11vw, 9rem)',
               letterSpacing: '-0.03em',
@@ -87,60 +87,58 @@ export default function LetsTalk() {
             <br />
             <span className="text-white/20">TALK.</span>
           </h2>
+
+          {/* Minimalist Email CTA */}
           <motion.a
             href="mailto:hello@andalasiacreative.co"
             whileHover={{ x: 6 }}
             transition={{ type: 'spring', stiffness: 300 }}
-            className="group inline-flex items-center gap-4 font-syne font-bold text-white text-sm md:text-base tracking-[0.15em] uppercase border border-white/20 px-8 py-5 hover:bg-white hover:text-black transition-all duration-500"
+            className="group inline-flex items-center gap-4 w-fit border border-gray-700 rounded-sm px-8 py-4 md:px-12 md:py-5 font-inter text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-colors duration-300 mt-4 mb-20"
           >
-            hello@andalasiacreative.co
-            <ExternalLink size={14} strokeWidth={1.5} className="group-hover:rotate-45 transition-transform duration-300" />
+            HELLO@ANDALASIACREATIVE.CO
+            <ExternalLink size={16} strokeWidth={1.5} className="group-hover:rotate-45 transition-transform duration-300" />
           </motion.a>
+
+
         </motion.div>
       </div>
 
       {/* Footer */}
       <footer
-        className="px-8 md:px-16 py-8 border-t border-white/8 flex flex-col md:flex-row items-center justify-between gap-6"
+        className="relative px-8 md:px-16 py-8 border-t border-white/8 w-full flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6 font-inter text-xs md:text-sm tracking-widest"
         style={{ borderTopColor: 'rgba(255,255,255,0.08)' }}
       >
-        <div className="flex items-center gap-2">
-          <span className="font-syne font-extrabold text-white text-xs tracking-[0.3em] uppercase">
-            Andalasia Creative
-          </span>
-          <span className="text-gray-700 text-xs">·</span>
-          <span className="font-inter text-[10px] text-gray-700 tracking-wide">© 2026 All rights reserved.</span>
+        {/* Left Group */}
+        <div className="w-full md:w-auto uppercase">
+          <span className="text-white">© 2026 ANDALASIA CREATIVE.</span>
+          <span className="text-gray-500 hidden md:inline">{" "}</span>
+          <br className="md:hidden" />
+          <span className="text-gray-500">JL SWAKARYA BLOK C NO. 15, JAKARTA SELATAN.</span>
         </div>
 
-        <div className="flex items-center gap-6">
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noreferrer"
-            className="group flex items-center gap-2 font-inter text-[10px] tracking-[0.2em] uppercase text-gray-600 hover:text-white transition-colors duration-300"
-          >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-            </svg>
-            instagram
+        {/* Center Group */}
+        <div className="w-full md:w-auto flex flex-col xl:flex-row items-center gap-2 md:gap-6">
+          <a href="mailto:pdamaraputra@andalasiacreative.com" className="lowercase text-gray-400 hover:text-white transition-colors duration-300">
+            pdamaraputra@andalasiacreative.com
           </a>
-          <span className="h-3 w-px bg-white/10" />
-          <a
-            href="https://behance.net"
-            target="_blank"
-            rel="noreferrer"
-            className="group flex items-center gap-2 font-inter text-[10px] tracking-[0.2em] uppercase text-gray-600 hover:text-white transition-colors duration-300"
-          >
-            <ExternalLink size={12} strokeWidth={1.5} />
-            behance
+          <span className="hidden xl:inline text-gray-600">•</span>
+          <a href="tel:081317977663" className="text-gray-400 hover:text-white transition-colors duration-300">
+            0813-1797-7663
           </a>
         </div>
 
-        <span className="font-inter text-[10px] text-gray-700 tracking-[0.2em] uppercase">
-          Jakarta, Indonesia
-        </span>
+        {/* Right Group */}
+        <div className="w-full md:w-auto flex justify-center md:justify-end uppercase">
+          <a
+            href="https://instagram.com/andalasia.creative"
+            target="_blank"
+            rel="noreferrer"
+            className="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            INSTAGRAM
+            <ExternalLink size={14} strokeWidth={1.5} className="group-hover:rotate-45 transition-transform duration-300" />
+          </a>
+        </div>
       </footer>
     </section>
   );
