@@ -103,41 +103,54 @@ export default function LetsTalk() {
         </motion.div>
       </div>
 
-      {/* Footer */}
-      <footer
-        className="relative px-8 md:px-16 py-8 border-t border-white/8 w-full flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6 font-inter text-xs md:text-sm tracking-widest"
-        style={{ borderTopColor: 'rgba(255,255,255,0.08)' }}
-      >
-        {/* Left Group */}
-        <div className="w-full md:w-auto uppercase">
-          <span className="text-white">© 2026 ANDALASIA CREATIVE.</span>
-          <span className="text-gray-500 hidden md:inline">{" "}</span>
-          <br className="md:hidden" />
-          <span className="text-gray-500">JL SWAKARYA BLOK C NO. 15, JAKARTA SELATAN.</span>
+      {/* Fat Footer */}
+      <footer className="relative px-8 md:px-16 w-full font-inter">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pt-20">
+          
+          {/* Column 1: Brand & Address */}
+          <div>
+            <h3 className="text-xl font-bold tracking-widest text-white mb-6 uppercase">
+              ANDALASIA CREATIVE
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Jl Swakarya Blok C No. 15, Pd Labu, Cilandak, Jakarta Selatan.
+            </p>
+          </div>
+
+          {/* Column 2: Navigation */}
+          <div>
+            <h3 className="text-white font-semibold mb-6">Navigation</h3>
+            <div className="flex flex-col gap-4">
+              <a href="#services" className="text-gray-400 hover:text-white transition-colors text-sm w-fit">Services</a>
+              <a href="#work" className="text-gray-400 hover:text-white transition-colors text-sm w-fit">Work</a>
+              <a href="#reviews" className="text-gray-400 hover:text-white transition-colors text-sm w-fit">Reviews</a>
+              <a href="#about" className="text-gray-400 hover:text-white transition-colors text-sm w-fit">About</a>
+            </div>
+          </div>
+
+          {/* Column 3: Contact */}
+          <div>
+            <h3 className="text-white font-semibold mb-6">Contact</h3>
+            <div className="flex flex-col gap-4">
+              <a href="mailto:pdamaraputra@andalasiacreative.com" className="text-gray-400 hover:text-white transition-colors text-sm break-all w-fit">
+                pdamaraputra@andalasiacreative.com
+              </a>
+              <a href="tel:081317977663" className="text-gray-400 hover:text-white transition-colors text-sm w-fit">
+                0813-1797-7663
+              </a>
+              <a href="https://instagram.com/andalasia.creative" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm w-fit">
+                @andalasia.creative
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Center Group */}
-        <div className="w-full md:w-auto flex flex-col xl:flex-row items-center gap-2 md:gap-6">
-          <a href="mailto:pdamaraputra@andalasiacreative.com" className="lowercase text-gray-400 hover:text-white transition-colors duration-300">
-            pdamaraputra@andalasiacreative.com
-          </a>
-          <span className="hidden xl:inline text-gray-600">•</span>
-          <a href="tel:081317977663" className="text-gray-400 hover:text-white transition-colors duration-300">
-            0813-1797-7663
-          </a>
-        </div>
-
-        {/* Right Group */}
-        <div className="w-full md:w-auto flex justify-center md:justify-end uppercase">
-          <a
-            href="https://instagram.com/andalasia.creative"
-            target="_blank"
-            rel="noreferrer"
-            className="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300"
-          >
-            INSTAGRAM
-            <ExternalLink size={14} strokeWidth={1.5} className="group-hover:rotate-45 transition-transform duration-300" />
-          </a>
+        {/* Bottom Copyright Bar */}
+        <div className="mt-16 pt-8 pb-8 border-t border-gray-800">
+          <p className="text-gray-500 text-sm text-center md:text-left">
+            © 2026 Andalasia Creative. All Rights Reserved.
+          </p>
         </div>
       </footer>
     </section>

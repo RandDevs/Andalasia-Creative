@@ -77,45 +77,14 @@ export default function Hero() {
         </p>
       </motion.div>
 
-      {/* Bottom-left descriptor */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1.9, duration: 0.6 }}
-        className="hidden md:block absolute bottom-36 md:left-16 max-w-xs"
-      >
-        <p className="font-inter text-xs text-gray-500 leading-relaxed tracking-wide">
-          Creating immersive events and high-quality<br />visual storytelling that leaves a lasting impression.
-        </p>
-      </motion.div>
 
-      {/* Scroll hint */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.2, duration: 0.8 }}
-        className="hidden md:flex absolute bottom-36 md:right-16 flex-col items-end gap-2"
-      >
-        <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gray-600">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-          className="w-px h-12 bg-gradient-to-b from-gray-600 to-transparent"
-        />
-      </motion.div>
+      {/* Scroll hint ghost container to preserve any absolute spacing if needed */}
+      <div className="hidden md:flex absolute bottom-36 md:right-16 h-[68px] w-px pointer-events-none" aria-hidden="true" />
 
       {/* Main headline */}
       <div className="relative z-10 px-8 md:px-16 pb-12 md:pb-16 flex-grow flex flex-col justify-center md:justify-end pt-24 md:pt-0">
-        <div className="overflow-hidden mb-4">
-          <motion.span
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="font-inter text-[10px] tracking-[0.3em] uppercase text-gray-500 mb-6 block"
-          >
-            ― 001
-          </motion.span>
-        </div>
+        {/* Ghost element to preserve the exact vertical flex balance of the headline */}
+        <div className="h-[34px] mb-4 pointer-events-none" aria-hidden="true" />
 
         <div className="flex flex-col">
           {HEADLINE_WORDS.map((word, i) => (

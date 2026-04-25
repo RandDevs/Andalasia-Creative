@@ -50,7 +50,7 @@ export default function Testimonials() {
 
   return (
     <section
-      id="testimonials"
+      id="reviews"
       className="relative bg-[#050505] border-t"
       style={{ borderColor: 'rgba(255,255,255,0.08)' }}
     >
