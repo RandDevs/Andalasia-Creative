@@ -11,25 +11,26 @@ function CustomCursor() {
   const ringRef = useRef(null);
   const [hovering, setHovering] = useState(false);
 
+  const mousePos = useRef({ x: 0, y: 0 });
+  const ringPos = useRef({ x: 0, y: 0 });
+
   useEffect(() => {
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
     let raf;
 
     const onMouseMove = (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
+      mousePos.current.x = e.clientX;
+      mousePos.current.y = e.clientY;
       if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+        dotRef.current.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
       }
     };
 
     const smoothRing = () => {
-      ringX += (mouseX - ringX) * 0.12;
-      ringY += (mouseY - ringY) * 0.12;
+      ringPos.current.x += (mousePos.current.x - ringPos.current.x) * 0.12;
+      ringPos.current.y += (mousePos.current.y - ringPos.current.y) * 0.12;
       if (ringRef.current) {
         const offset = hovering ? 30 : 18;
-        ringRef.current.style.transform = `translate(${ringX - offset}px, ${ringY - offset}px)`;
+        ringRef.current.style.transform = `translate(${ringPos.current.x - offset}px, ${ringPos.current.y - offset}px)`;
       }
       raf = requestAnimationFrame(smoothRing);
     };

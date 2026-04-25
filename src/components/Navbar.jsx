@@ -102,7 +102,7 @@ export default function Navbar() {
                 exit={{ opacity: 0, y: 30 }}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
                 onClick={() => setMenuOpen(false)}
-                className="font-syne text-5xl font-extrabold text-white uppercase tracking-tight hover:text-gray-400 transition-colors"
+                className="font-syne text-4xl sm:text-5xl font-extrabold text-white uppercase tracking-tight hover:text-gray-400 transition-colors"
               >
                 {link}
               </motion.a>

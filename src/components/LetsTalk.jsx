@@ -93,10 +93,10 @@ export default function LetsTalk() {
             href="mailto:hello@andalasiacreative.co"
             whileHover={{ x: 6 }}
             transition={{ type: 'spring', stiffness: 300 }}
-            className="group inline-flex items-center gap-4 w-fit border border-gray-700 rounded-sm px-8 py-4 md:px-12 md:py-5 font-inter text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-colors duration-300 mt-4 mb-20"
+            className="group inline-flex items-center gap-2 md:gap-4 w-fit max-w-full border border-gray-700 rounded-sm px-4 py-3 sm:px-8 sm:py-4 md:px-12 md:py-5 font-inter text-[10px] sm:text-xs md:text-base font-semibold tracking-wider sm:tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-colors duration-300 mt-4 mb-20"
           >
-            HELLO@ANDALASIACREATIVE.CO
-            <ExternalLink size={16} strokeWidth={1.5} className="group-hover:rotate-45 transition-transform duration-300" />
+            <span className="break-all text-center leading-relaxed">HELLO@ANDALASIACREATIVE.CO</span>
+            <ExternalLink size={16} strokeWidth={1.5} className="group-hover:rotate-45 transition-transform duration-300 flex-shrink-0" />
           </motion.a>
 
 
