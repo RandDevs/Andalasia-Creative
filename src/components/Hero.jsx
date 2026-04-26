@@ -82,7 +82,7 @@ export default function Hero() {
       <div className="hidden md:flex absolute bottom-36 md:right-16 h-[68px] w-px pointer-events-none" aria-hidden="true" />
 
       {/* Main headline */}
-      <div className="relative z-10 px-8 md:px-16 pb-12 md:pb-16 flex-grow flex flex-col justify-center md:justify-end pt-24 md:pt-0">
+      <div className="relative z-10 px-6 md:px-16 pb-0 md:pb-16 flex-grow flex flex-col justify-center md:justify-end pt-18 md:pt-6">
         {/* Ghost element to preserve the exact vertical flex balance of the headline */}
         <div className="h-[34px] mb-4 pointer-events-none" aria-hidden="true" />
 
