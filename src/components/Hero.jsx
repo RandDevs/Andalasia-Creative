@@ -52,7 +52,7 @@ export default function Hero() {
     <section
       ref={heroRef}
       id="hero"
-      className="relative min-h-screen flex flex-col overflow-x-hidden bg-[#18181b]"
+      className="relative min-h-screen flex flex-col overflow-x-hidden bg-zinc-900"
     >
       {/* Cursor-tracked radial glow */}
       <div
@@ -123,7 +123,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 0.8 }}
-        className="relative z-10 border-t border-white/8 py-4 overflow-hidden bg-[#18181b]"
+        className="relative z-10 border-t border-white/8 py-4 overflow-hidden bg-zinc-900"
         style={{ borderTopColor: 'rgba(255,255,255,0.08)' }}
       >
         <div className="marquee-container">

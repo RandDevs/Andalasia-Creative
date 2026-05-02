@@ -7,10 +7,10 @@ export default function LetsTalk() {
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="about" className="bg-[#09090b]">
+    <section id="about">
       {/* About blurb */}
       <div
-        className="px-8 md:px-16 py-24 grid md:grid-cols-2 gap-16 border-b border-white/8"
+        className="px-8 md:px-16 py-24 grid md:grid-cols-2 gap-16 border-b border-white/15 bg-[rgb(14,14,14)]"
         style={{ borderBottomColor: 'rgba(255,255,255,0.08)' }}
       >
         <motion.div
@@ -19,7 +19,7 @@ export default function LetsTalk() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
         >
-          <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gray-600 block mb-6">
+          <span className="font-inter text-sm font-medium text-zinc-400 tracking-widest uppercase block mb-6">
             About Us
           </span>
           <h2
@@ -42,7 +42,7 @@ export default function LetsTalk() {
             {[['12+', 'Years'], ['240+', 'Projects'], ['3', 'Continents']].map(([num, label]) => (
               <div key={label}>
                 <span className="font-syne font-extrabold text-white text-2xl">{num}</span>
-                <span className="font-inter text-xs text-gray-600 block tracking-wider">{label}</span>
+                <span className="font-inter text-xs text-gray-400 block tracking-wider">{label}</span>
               </div>
             ))}
           </div>
@@ -73,7 +73,7 @@ export default function LetsTalk() {
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           className="relative z-10 w-full"
         >
-          <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gray-600 block mb-6">
+          <span className="font-inter text-sm font-medium text-zinc-400 tracking-widest uppercase block mb-6">
             Start a Project
           </span>
           <h2
@@ -104,7 +104,7 @@ export default function LetsTalk() {
       </div>
 
       {/* Fat Footer */}
-      <footer className="relative px-8 md:px-16 w-full font-inter">
+      <footer className="relative px-8 md:px-16 w-full font-inter bg-[rgb(14,14,14)]">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pt-20">
 
@@ -133,8 +133,6 @@ export default function LetsTalk() {
           <div>
             <h3 className="text-white font-semibold mb-6">Contact</h3>
             <div className="flex flex-col gap-4">
-
-
               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pdamaraputra@andalasiacreative.com" target="_blank" rel="noreferrer" className="group flex w-fit items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300 text-sm">
                 <span>Email</span>
                 <span className="text-sm transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
@@ -157,7 +155,7 @@ export default function LetsTalk() {
 
         {/* Bottom Copyright Bar */}
         <div className="mt-16 pt-8 pb-8 border-t border-gray-800">
-          <p className="text-gray-500 text-sm text-center md:text-left">
+          <p className="text-gray-400 text-sm text-center md:text-left">
             © 2026 Andalasia Creative. All Rights Reserved.
           </p>
         </div>

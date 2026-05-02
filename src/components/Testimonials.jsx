@@ -51,12 +51,12 @@ export default function Testimonials() {
   return (
     <section
       id="reviews"
-      className="relative bg-[#18181b] border-t"
+      className="relative bg-[rgb(14,14,14)] border-t"
       style={{ borderColor: 'rgba(255,255,255,0.08)' }}
     >
       {/* Faint vertical rule decoration */}
       <div
-        className="absolute left-1/2 top-0 w-px h-24 -translate-x-1/2"
+        className="absolute left-1/2 top-0 w-px h-20 -translate-x-1/2"
         style={{ background: 'rgba(255,255,255,0.06)' }}
       />
 
@@ -69,7 +69,7 @@ export default function Testimonials() {
             animate={titleInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
           >
-            <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gray-600 block mb-4">
+            <span className="font-inter text-sm font-medium text-zinc-400 tracking-widest uppercase block mb-4">
               Client Voices
             </span>
             <h2
@@ -86,10 +86,10 @@ export default function Testimonials() {
             transition={{ duration: 0.7, delay: 0.35 }}
             className="hidden md:flex flex-col items-end gap-1"
           >
-            <span className="font-inter text-xs text-gray-600">
+            <span className="font-inter text-sm text-gray-500">
               {reviews.length} Reviews
             </span>
-            <div className="h-px w-8 bg-white/20" />
+            <div className="h-px w-8 bg-white/30" />
           </motion.div>
         </div>
       </div>
@@ -101,17 +101,17 @@ export default function Testimonials() {
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         className="px-8 md:px-16 pb-24 grid grid-cols-1 md:grid-cols-3 gap-px"
-        style={{ background: 'rgba(255,255,255,0.06)' }}
+        style={{ background: 'rgba(22, 22, 22, 1)' }}
       >
         {reviews.map((review) => (
           <motion.div
             key={review.id}
             variants={cardVariants}
-            className="group relative flex flex-col justify-between bg-[#09090b] p-8 md:p-10 transition-colors duration-500 hover:bg-[#18181b]"
+            className="group relative flex flex-col justify-between bg-[rgb(14,14,14)] p-8 md:p-10 transition-colors duration-300 hover:bg-[rgb(14,14,14)]/80"
           >
             {/* Ghost index number */}
             <span
-              className="font-syne font-extrabold text-white/[0.04] select-none absolute top-6 right-8 leading-none"
+              className="font-syne font-extrabold text-white/[0.2] select-none absolute top-6 right-8 leading-none"
               style={{ fontSize: '5rem' }}
             >
               {review.index}
@@ -137,7 +137,7 @@ export default function Testimonials() {
               <span className="font-syne font-bold text-white text-base block mb-1 group-hover:text-white transition-colors duration-300">
                 {review.author}
               </span>
-              <span className="font-inter text-[10px] tracking-[0.25em] uppercase text-gray-600">
+              <span className="font-inter text-[10px] tracking-[0.25em] uppercase text-gray-500">
                 {review.role}
               </span>
             </div>

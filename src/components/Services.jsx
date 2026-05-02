@@ -57,15 +57,14 @@ function ServiceCard({ service, index }) {
       variants={containerVariants}
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
-      className={`px-8 md:px-16 py-16 md:py-24 flex flex-col ${
-        index === 1 ? 'md:border-l border-white/8' : ''
-      }`}
+      className={`px-8 md:px-16 py-16 md:py-24 flex flex-col bg-[rgb(14,14,14)] ${index === 1 ? 'md:border-l border-white/8' : ''
+        }`}
       style={{ borderColor: 'rgba(255,255,255,0.08)' }}
     >
       {/* Index number */}
       <motion.span
         variants={itemVariants}
-        className="font-syne font-extrabold text-[7rem] md:text-[10rem] leading-none text-white/5 select-none mb-4"
+        className="font-syne font-extrabold text-[7rem] md:text-[10rem] leading-none text-white/20 select-none mb-4"
         style={{ lineHeight: 0.85 }}
       >
         {service.index}
@@ -124,7 +123,7 @@ export default function Services() {
   const titleInView = useInView(titleRef, { once: true, margin: '-60px' });
 
   return (
-    <section id="services" className="bg-[#09090b]">
+    <section id="services" className="bg-[rgb(14,14,14)]">
       {/* Section header */}
       <div className="px-8 md:px-16 pt-24 pb-0 border-b border-white/8" style={{ borderBottomColor: 'rgba(255,255,255,0.08)' }}>
         <div className="flex items-end justify-between pb-8">
@@ -134,7 +133,7 @@ export default function Services() {
             animate={titleInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
           >
-            <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gray-600 block mb-4">
+            <span className="font-inter text-sm font-medium text-zinc-400 tracking-widest uppercase block mb-4">
               What We Do
             </span>
             <h2
@@ -150,7 +149,7 @@ export default function Services() {
             initial={{ opacity: 0, x: 20 }}
             animate={titleInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
-            className="hidden md:block font-inter text-xs text-gray-600 max-w-[160px] text-right leading-relaxed"
+            className="hidden md:block font-inter text-sm text-gray-500 max-w-[160px] text-right leading-relaxed"
           >
             Two disciplines,<br />one unified vision.
           </motion.p>

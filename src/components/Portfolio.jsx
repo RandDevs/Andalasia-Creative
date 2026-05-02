@@ -149,11 +149,10 @@ function GalleryModal({ onClose }) {
             <button
               key={f}
               onClick={() => setActiveFilter(f)}
-              className={`font-inter text-[10px] tracking-[0.2em] uppercase px-4 py-2 border transition-all duration-300 ${
-                activeFilter === f
-                  ? 'border-white/60 text-white bg-white/8'
-                  : 'border-white/10 text-zinc-500 hover:border-white/30 hover:text-zinc-300'
-              }`}
+              className={`font-inter text-[10px] tracking-[0.2em] uppercase px-4 py-2 border transition-all duration-300 ${activeFilter === f
+                ? 'border-white/60 text-white bg-white/8'
+                : 'border-white/10 text-zinc-500 hover:border-white/30 hover:text-zinc-300'
+                }`}
               style={{ background: activeFilter === f ? 'rgba(255,255,255,0.06)' : 'transparent' }}
             >
               {f}
@@ -180,11 +179,10 @@ function GalleryModal({ onClose }) {
           <button
             key={f}
             onClick={() => setActiveFilter(f)}
-            className={`flex-shrink-0 font-inter text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 border transition-all duration-300 ${
-              activeFilter === f
-                ? 'border-white/60 text-white'
-                : 'border-white/10 text-zinc-500'
-            }`}
+            className={`flex-shrink-0 font-inter text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 border transition-all duration-300 ${activeFilter === f
+              ? 'border-white/60 text-white'
+              : 'border-white/10 text-zinc-500'
+              }`}
             style={{ background: activeFilter === f ? 'rgba(255,255,255,0.06)' : 'transparent' }}
           >
             {f}
@@ -305,7 +303,7 @@ export default function Portfolio() {
         {isGalleryOpen && <GalleryModal onClose={() => setIsGalleryOpen(false)} />}
       </AnimatePresence>
 
-      <section id="work" className="bg-[#18181b]">
+      <section id="work" className="bg-[rgb(17,17,17)]">
         {/* Section header */}
         <div
           className="px-8 md:px-16 pt-24 pb-12 border-b border-white/8"
@@ -318,7 +316,7 @@ export default function Portfolio() {
               animate={titleInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
             >
-              <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gray-600 block mb-4">
+              <span className="font-inter text-sm font-medium text-zinc-400 tracking-widest uppercase block mb-4">
                 Selected Work
               </span>
               <h2
@@ -334,10 +332,10 @@ export default function Portfolio() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="hidden md:flex flex-col items-end gap-1"
             >
-              <span className="font-inter text-xs text-gray-600">
+              <span className="font-inter text-sm text-gray-500">
                 {projects.length} Projects
               </span>
-              <div className="h-px w-8 bg-white/20" />
+              <div className="h-px w-8 bg-white/30" />
             </motion.div>
           </div>
         </div>
