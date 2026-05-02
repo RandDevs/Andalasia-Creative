@@ -122,36 +122,61 @@ function GalleryModal({ onClose }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
-      className="fixed inset-0 z-[100] bg-zinc-950/95 backdrop-blur-md overflow-y-auto"
+      className="fixed inset-0 z-[100] flex flex-col bg-zinc-950/95 backdrop-blur-md"
     >
-      {/* ── Header bar ── */}
-      <div
-        className="sticky top-0 z-10 flex items-center justify-between px-6 md:px-12 py-5 border-b"
-        style={{
-          background: 'rgba(9,9,11,0.92)',
-          borderColor: 'rgba(255,255,255,0.08)',
-          backdropFilter: 'blur(12px)',
-        }}
-      >
-        {/* Title + count */}
-        <div className="flex items-baseline gap-4">
-          <span className="font-syne font-extrabold text-white text-lg tracking-tight">
-            Full Gallery
-          </span>
-          <span className="font-inter text-[10px] tracking-[0.25em] uppercase text-zinc-500">
-            {filtered.length} Projects
-          </span>
+      {/* ── Sticky top bar: header + mobile pills ── */}
+      <div className="sticky top-0 z-50 w-full shrink-0 bg-zinc-900/70 backdrop-blur-md border-b" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+        {/* Main header row */}
+        <div className="flex items-center justify-between px-6 md:px-12 pt-8 pb-4">
+          {/* Title + count */}
+          <div className="flex items-baseline gap-4">
+            <span className="font-syne font-extrabold text-white text-lg tracking-tight">
+              Full Gallery
+            </span>
+            <span className="font-inter text-xs tracking-[0.25em] uppercase text-zinc-500">
+              {filtered.length} Projects
+            </span>
+          </div>
+
+          {/* Desktop filter pills */}
+          <div className="hidden md:flex items-center gap-2">
+            {FILTERS.map((f) => (
+              <button
+                key={f}
+                onClick={() => setActiveFilter(f)}
+                className={`font-inter text-[10px] tracking-[0.2em] uppercase px-4 py-2 border transition-all duration-300 ${activeFilter === f
+                  ? 'border-white/70 text-white'
+                  : 'border-white/10 text-zinc-500 hover:border-white/30 hover:text-zinc-300'
+                  }`}
+                style={{ background: activeFilter === f ? 'rgba(255,255,255,0.06)' : 'transparent' }}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+
+          {/* Close button */}
+          <button
+            onClick={onClose}
+            aria-label="Close gallery"
+            className="group flex items-center gap-2 font-inter text-[10px] tracking-[0.2em] uppercase text-zinc-400 hover:text-white transition-colors duration-300"
+          >
+            <span className="hidden sm:inline">Close</span>
+            <span className="flex items-center justify-center w-8 h-8 border border-white/10 group-hover:border-white/50 transition-colors duration-300">
+              <X size={14} strokeWidth={1.5} />
+            </span>
+          </button>
         </div>
 
-        {/* Filter pills */}
-        <div className="hidden md:flex items-center gap-2">
+        {/* Mobile filter pills row */}
+        <div className="flex md:hidden gap-2 px-6 pb-4 overflow-x-auto">
           {FILTERS.map((f) => (
             <button
               key={f}
               onClick={() => setActiveFilter(f)}
-              className={`font-inter text-[10px] tracking-[0.2em] uppercase px-4 py-2 border transition-all duration-300 ${activeFilter === f
-                ? 'border-white/60 text-white bg-white/8'
-                : 'border-white/10 text-zinc-500 hover:border-white/30 hover:text-zinc-300'
+              className={`flex-shrink-0 font-inter text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 border transition-all duration-300 ${activeFilter === f
+                ? 'border-white/60 text-white'
+                : 'border-white/10 text-zinc-500'
                 }`}
               style={{ background: activeFilter === f ? 'rgba(255,255,255,0.06)' : 'transparent' }}
             >
@@ -159,95 +184,69 @@ function GalleryModal({ onClose }) {
             </button>
           ))}
         </div>
-
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          aria-label="Close gallery"
-          className="group flex items-center gap-2 font-inter text-[10px] tracking-[0.2em] uppercase text-zinc-400 hover:text-white transition-colors duration-300"
-        >
-          <span className="hidden sm:inline">Close</span>
-          <span className="flex items-center justify-center w-8 h-8 border border-white/10 group-hover:border-white/50 transition-colors duration-300">
-            <X size={14} strokeWidth={1.5} />
-          </span>
-        </button>
       </div>
 
-      {/* ── Mobile filter pills ── */}
-      <div className="flex md:hidden gap-2 px-6 pt-5 pb-1 overflow-x-auto">
-        {FILTERS.map((f) => (
-          <button
-            key={f}
-            onClick={() => setActiveFilter(f)}
-            className={`flex-shrink-0 font-inter text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 border transition-all duration-300 ${activeFilter === f
-              ? 'border-white/60 text-white'
-              : 'border-white/10 text-zinc-500'
-              }`}
-            style={{ background: activeFilter === f ? 'rgba(255,255,255,0.06)' : 'transparent' }}
+      {/* ── Scrollable content area ── */}
+      <div className="flex-1 overflow-y-auto">
+        {/* Grid */}
+        <div className="px-4 md:px-12 py-8 md:py-10">
+          <motion.div
+            layout
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
           >
-            {f}
-          </button>
-        ))}
-      </div>
-
-      {/* ── Grid ── */}
-      <div className="px-4 md:px-12 py-8 md:py-10">
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-        >
-          <AnimatePresence mode="popLayout">
-            {filtered.map((project, i) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.45, delay: i * 0.04, ease: [0.76, 0, 0.24, 1] }}
-                className="group relative overflow-hidden cursor-pointer"
-              >
-                <div className="w-full aspect-[4/3] overflow-hidden relative">
-                  <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-all duration-600 z-10" />
-                  {/* Info */}
-                  <div className="absolute inset-0 z-20 flex flex-col justify-end p-5">
-                    <div className="translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
-                      <span className="font-inter text-[9px] tracking-[0.25em] uppercase text-white/80 block mb-1.5">
-                        {project.category} · {project.year}
-                      </span>
-                      <h4 className="font-syne font-bold text-white text-xl leading-tight">
-                        {project.title}
-                      </h4>
+            <AnimatePresence mode="popLayout">
+              {filtered.map((project, i) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.45, delay: i * 0.04, ease: [0.76, 0, 0.24, 1] }}
+                  className="group relative cursor-pointer"
+                >
+                  <div className="w-full aspect-[4/3] overflow-hidden relative">
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-all duration-600 z-10" />
+                    {/* Info */}
+                    <div className="absolute inset-0 z-20 flex flex-col justify-end p-5">
+                      <div className="translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                        <span className="font-inter text-[9px] tracking-[0.25em] uppercase text-white/80 block mb-1.5">
+                          {project.category} · {project.year}
+                        </span>
+                        <h4 className="font-syne font-bold text-white text-xl leading-tight">
+                          {project.title}
+                        </h4>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-      </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
 
-      {/* ── Footer ── */}
-      <div
-        className="px-6 md:px-12 py-6 border-t flex items-center justify-between"
-        style={{ borderColor: 'rgba(255,255,255,0.06)' }}
-      >
-        <span className="font-inter text-[10px] tracking-[0.25em] uppercase text-zinc-600">
-          Andalasia Creative · Full Portfolio
-        </span>
-        <button
-          onClick={onClose}
-          className="font-inter text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-white transition-colors duration-300"
+        {/* Footer */}
+        <div
+          className="px-6 md:px-12 py-6 border-t flex items-center justify-between"
+          style={{ borderColor: 'rgba(255,255,255,0.06)' }}
         >
-          ← Back to Site
-        </button>
+          <span className="font-inter text-xs tracking-[0.25em] uppercase text-zinc-500">
+            Andalasia Creative · Full Portfolio
+          </span>
+          <button
+            onClick={onClose}
+            className="font-inter text-xs tracking-[0.2em] uppercase text-zinc-500 hover:text-white transition-colors duration-300"
+          >
+            ← Back to Site
+          </button>
+        </div>
       </div>
     </motion.div>
   );

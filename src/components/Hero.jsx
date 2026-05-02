@@ -69,10 +69,10 @@ export default function Hero() {
         transition={{ delay: 1.8, duration: 0.6 }}
         className="absolute top-28 right-8 md:right-16 text-right"
       >
-        <p className="font-inter text-[10px] tracking-[0.25em] uppercase text-gray-500">
+        <p className="font-inter text-xs tracking-[0.25em] uppercase text-gray-500">
           Creative Production House
         </p>
-        <p className="font-inter text-[10px] tracking-[0.2em] uppercase text-gray-600 mt-1">
+        <p className="font-inter text-xs tracking-[0.2em] uppercase text-gray-600 mt-1">
           Est. 2026
         </p>
       </motion.div>
