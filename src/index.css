@@ -11,10 +11,10 @@
 }
 
 :root {
-  --bg-void: #050505;
-  --bg-section: #111111;
+  --bg-void: #18181b;    /* zinc-900 */
+  --bg-section: #09090b; /* zinc-950 */
   --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
+  --text-secondary: #a1a1aa; /* zinc-400 */
   --accent: #ffffff;
   --hairline: rgba(255,255,255,0.08);
 }

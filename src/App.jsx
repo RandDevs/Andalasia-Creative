@@ -67,7 +67,7 @@ function CustomCursor() {
 
 export default function App() {
   return (
-    <div className="grain min-h-screen bg-[#050505] text-white antialiased">
+    <div className="grain min-h-screen bg-[#18181b] text-white antialiased">
       <CustomCursor />
       <Navbar />
       <main>

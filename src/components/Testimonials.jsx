@@ -51,7 +51,7 @@ export default function Testimonials() {
   return (
     <section
       id="reviews"
-      className="relative bg-[#050505] border-t"
+      className="relative bg-[#18181b] border-t"
       style={{ borderColor: 'rgba(255,255,255,0.08)' }}
     >
       {/* Faint vertical rule decoration */}
@@ -107,7 +107,7 @@ export default function Testimonials() {
           <motion.div
             key={review.id}
             variants={cardVariants}
-            className="group relative flex flex-col justify-between bg-[#050505] p-8 md:p-10 transition-colors duration-500 hover:bg-[#0d0d0d]"
+            className="group relative flex flex-col justify-between bg-[#09090b] p-8 md:p-10 transition-colors duration-500 hover:bg-[#18181b]"
           >
             {/* Ghost index number */}
             <span

@@ -124,7 +124,7 @@ export default function Services() {
   const titleInView = useInView(titleRef, { once: true, margin: '-60px' });
 
   return (
-    <section id="services" className="bg-[#0d0d0d]">
+    <section id="services" className="bg-[#09090b]">
       {/* Section header */}
       <div className="px-8 md:px-16 pt-24 pb-0 border-b border-white/8" style={{ borderBottomColor: 'rgba(255,255,255,0.08)' }}>
         <div className="flex items-end justify-between pb-8">

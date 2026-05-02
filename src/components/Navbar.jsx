@@ -29,11 +29,10 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-6 transition-all duration-500 ${
-          scrolled
-            ? 'backdrop-blur-xl bg-black/40 border-b border-white/5'
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-6 transition-all duration-500 ${scrolled
+            ? 'backdrop-blur-xl bg-zinc-950/60 border-b border-white/5'
             : 'bg-transparent'
-        }`}
+          }`}
       >
         {/* Logo */}
         <a
@@ -91,7 +90,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center gap-10 md:hidden"
+            className="fixed inset-0 z-40 bg-zinc-950/98 backdrop-blur-xl flex flex-col items-center justify-center gap-10 md:hidden"
           >
             {links.map((link, i) => (
               <motion.a
@@ -108,7 +107,7 @@ export default function Navbar() {
               </motion.a>
             ))}
             <motion.a
-              href="mailto:hello@andalasiacreative.co"
+              href="mailto:pdamaraputra@andalasiacreative.com"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

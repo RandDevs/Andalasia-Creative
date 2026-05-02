@@ -7,7 +7,7 @@ export default function LetsTalk() {
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="about" className="bg-[#0d0d0d]">
+    <section id="about" className="bg-[#09090b]">
       {/* About blurb */}
       <div
         className="px-8 md:px-16 py-24 grid md:grid-cols-2 gap-16 border-b border-white/8"
@@ -90,12 +90,12 @@ export default function LetsTalk() {
 
           {/* Minimalist Email CTA */}
           <motion.a
-            href="mailto:hello@andalasiacreative.co"
+            href="mailto:pdamaraputra@andalasiacreative.com"
             whileHover={{ x: 6 }}
             transition={{ type: 'spring', stiffness: 300 }}
             className="group inline-flex items-center gap-2 md:gap-4 w-fit max-w-full border border-gray-700 rounded-sm px-4 py-3 sm:px-8 sm:py-4 md:px-12 md:py-5 font-inter text-[10px] sm:text-xs md:text-base font-semibold tracking-wider sm:tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-colors duration-300 mt-4 mb-20"
           >
-            <span className="break-all text-center leading-relaxed">HELLO@ANDALASIACREATIVE.CO</span>
+            <span className="break-all text-center leading-relaxed uppercase ">pdamaraputra@andalasiacreative.com</span>
             <ExternalLink size={16} strokeWidth={1.5} className="group-hover:rotate-45 transition-transform duration-300 flex-shrink-0" />
           </motion.a>
 
@@ -107,7 +107,7 @@ export default function LetsTalk() {
       <footer className="relative px-8 md:px-16 w-full font-inter">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pt-20">
-          
+
           {/* Column 1: Brand & Address */}
           <div>
             <h3 className="text-xl font-bold tracking-widest text-white mb-6 uppercase">
@@ -133,14 +133,23 @@ export default function LetsTalk() {
           <div>
             <h3 className="text-white font-semibold mb-6">Contact</h3>
             <div className="flex flex-col gap-4">
-              <a href="mailto:pdamaraputra@andalasiacreative.com" className="text-gray-400 hover:text-white transition-colors text-sm break-all w-fit">
-                pdamaraputra@andalasiacreative.com
+
+
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pdamaraputra@andalasiacreative.com" target="_blank" rel="noreferrer" className="group flex w-fit items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300 text-sm">
+                <span>Email</span>
+                <span className="text-sm transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
               </a>
-              <a href="tel:081317977663" className="text-gray-400 hover:text-white transition-colors text-sm w-fit">
-                0813-1797-7663
+              <a href="https://wa.me/6281317977663" target="_blank" rel="noreferrer" className="group flex w-fit items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300 text-sm">
+                <span>WhatsApp</span>
+                <span className="text-sm transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
               </a>
-              <a href="https://instagram.com/andalasia.creative" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm w-fit">
-                @andalasia.creative
+              <a href="https://instagram.com/andalasia.creative" target="_blank" rel="noreferrer" className="group flex w-fit items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300 text-sm">
+                <span>Instagram</span>
+                <span className="text-sm transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
+              </a>
+              <a href="https://www.tiktok.com/@andalasia.creative?is_from_webapp=1&sender_device=pc" target="_blank" rel="noreferrer" className="group flex w-fit items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300 text-sm">
+                <span>TikTok</span>
+                <span className="text-sm transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
               </a>
             </div>
           </div>
