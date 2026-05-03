@@ -16,7 +16,11 @@ export default {
           850: '#1a1a1a',
           900: '#111111',
           950: '#0a0a0a',
-        }
+        },
+        brand: {
+          bg1: 'var(--bg-primary)',
+          bg2: 'var(--bg-secondary)',
+        },
       },
       animation: {
         'marquee': 'marquee 30s linear infinite',

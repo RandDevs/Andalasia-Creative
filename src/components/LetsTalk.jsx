@@ -10,7 +10,7 @@ export default function LetsTalk() {
     <section id="about">
       {/* About blurb */}
       <div
-        className="px-8 md:px-16 py-24 grid md:grid-cols-2 gap-16 border-b border-white/15 bg-[rgb(14,14,14)]"
+        className="px-8 md:px-16 py-24 grid md:grid-cols-2 gap-16 border-b border-white/15 bg-brand-bg2"
         style={{ borderBottomColor: 'rgba(255,255,255,0.08)' }}
       >
         <motion.div
@@ -52,7 +52,7 @@ export default function LetsTalk() {
       {/* LET'S TALK */}
       <div
         ref={ref}
-        className="relative px-8 md:px-16 py-20 md:py-28 overflow-hidden flex flex-col items-start w-full"
+        className="relative px-8 md:px-16 py-20 md:py-28 overflow-hidden flex flex-col items-start w-full bg-brand-bg1"
       >
         {/* Large background text */}
         <div
@@ -104,7 +104,7 @@ export default function LetsTalk() {
       </div>
 
       {/* Fat Footer */}
-      <footer className="relative px-8 md:px-16 w-full font-inter bg-[rgb(14,14,14)]">
+      <footer className="relative px-8 md:px-16 w-full font-inter bg-brand-bg2">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pt-20">
 

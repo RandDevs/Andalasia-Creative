@@ -4,19 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --bg-void: #18181b;    /* zinc-900 */
-  --bg-section: #09090b; /* zinc-950 */
+  --bg-primary: #202020;
+  /* zinc-900 — hero, portfolio, lighter sections */
+  --bg-secondary: #18181b;
+  /* near-zinc-950 — services, testimonials, footer */
   --text-primary: #ffffff;
-  --text-secondary: #a1a1aa; /* zinc-400 */
+  --text-secondary: #a1a1aa;
+  /* zinc-400 */
   --accent: #ffffff;
-  --hairline: rgba(255,255,255,0.08);
+  --hairline: rgba(255, 255, 255, 0.08);
 }
 
 html {
@@ -24,7 +29,7 @@ html {
 }
 
 body {
-  background-color: var(--bg-void);
+  background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
@@ -35,11 +40,13 @@ body {
 ::-webkit-scrollbar {
   width: 2px;
 }
+
 ::-webkit-scrollbar-track {
-  background: var(--bg-void);
+  background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Custom cursor */
@@ -60,7 +67,7 @@ body {
 .cursor-ring {
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   position: fixed;
   top: 0;
@@ -74,7 +81,7 @@ body {
 .cursor-ring.hovering {
   width: 60px;
   height: 60px;
-  border-color: rgba(255,255,255,0.9);
+  border-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Grain overlay */
@@ -93,16 +100,47 @@ body {
 }
 
 @keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-2%, -3%); }
-  20% { transform: translate(3%, 1%); }
-  30% { transform: translate(-1%, 4%); }
-  40% { transform: translate(2%, -2%); }
-  50% { transform: translate(-3%, 3%); }
-  60% { transform: translate(1%, -1%); }
-  70% { transform: translate(-2%, 2%); }
-  80% { transform: translate(3%, -3%); }
-  90% { transform: translate(-1%, 1%); }
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-2%, -3%);
+  }
+
+  20% {
+    transform: translate(3%, 1%);
+  }
+
+  30% {
+    transform: translate(-1%, 4%);
+  }
+
+  40% {
+    transform: translate(2%, -2%);
+  }
+
+  50% {
+    transform: translate(-3%, 3%);
+  }
+
+  60% {
+    transform: translate(1%, -1%);
+  }
+
+  70% {
+    transform: translate(-2%, 2%);
+  }
+
+  80% {
+    transform: translate(3%, -3%);
+  }
+
+  90% {
+    transform: translate(-1%, 1%);
+  }
 }
 
 /* Hairline dividers */
@@ -124,8 +162,13 @@ body {
 }
 
 @keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Portfolio clip-path reveal */
@@ -162,7 +205,7 @@ body {
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -179,7 +222,7 @@ body {
 }
 
 .nav-link:hover {
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
 }
 
 .nav-link:hover::after {

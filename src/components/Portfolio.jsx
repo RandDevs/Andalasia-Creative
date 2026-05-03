@@ -122,10 +122,10 @@ function GalleryModal({ onClose }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
-      className="fixed inset-0 z-[100] flex flex-col bg-zinc-950/95 backdrop-blur-md"
+      className="fixed inset-0 z-[100] flex flex-col bg-brand-bg2/95 backdrop-blur-md"
     >
       {/* ── Sticky top bar: header + mobile pills ── */}
-      <div className="sticky top-0 z-50 w-full shrink-0 bg-zinc-900/70 backdrop-blur-md border-b" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+      <div className="sticky top-0 z-50 w-full shrink-0 bg-brand-bg1/70 backdrop-blur-md border-b" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
         {/* Main header row */}
         <div className="flex items-center justify-between px-6 md:px-12 pt-8 pb-4">
           {/* Title + count */}
@@ -302,7 +302,7 @@ export default function Portfolio() {
         {isGalleryOpen && <GalleryModal onClose={() => setIsGalleryOpen(false)} />}
       </AnimatePresence>
 
-      <section id="work" className="bg-[rgb(17,17,17)]">
+      <section id="work" className="bg-brand-bg1">
         {/* Section header */}
         <div
           className="px-8 md:px-16 pt-24 pb-12 border-b border-white/8"

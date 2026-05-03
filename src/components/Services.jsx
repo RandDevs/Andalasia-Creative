@@ -57,7 +57,7 @@ function ServiceCard({ service, index }) {
       variants={containerVariants}
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
-      className={`px-8 md:px-16 py-16 md:py-24 flex flex-col bg-[rgb(14,14,14)] ${index === 1 ? 'md:border-l border-white/8' : ''
+      className={`px-8 md:px-16 py-16 md:py-24 flex flex-col bg-brand-bg2 ${index === 1 ? 'md:border-l border-white/8' : ''
         }`}
       style={{ borderColor: 'rgba(255,255,255,0.08)' }}
     >
@@ -72,7 +72,7 @@ function ServiceCard({ service, index }) {
 
       {/* Category label */}
       <motion.div variants={itemVariants} className="mb-8">
-        <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gray-500">
+        <span className="font-inter text-xs tracking-[0.3em] uppercase text-gray-400">
           {service.category}
         </span>
         <div className="h-px bg-white/10 mt-3 w-12" />
@@ -105,10 +105,10 @@ function ServiceCard({ service, index }) {
           >
             <Icon
               size={14}
-              className="text-gray-600 group-hover:text-white transition-colors duration-300"
+              className="text-gray-500 group-hover:text-white transition-colors duration-300"
               strokeWidth={1.5}
             />
-            <span className="font-inter text-xs tracking-wide text-gray-500 group-hover:text-white transition-colors duration-300">
+            <span className="font-inter text-sm tracking-wide text-gray-500 group-hover:text-white transition-colors duration-300">
               {label}
             </span>
           </motion.div>
@@ -123,7 +123,7 @@ export default function Services() {
   const titleInView = useInView(titleRef, { once: true, margin: '-60px' });
 
   return (
-    <section id="services" className="bg-[rgb(14,14,14)]">
+    <section id="services" className="bg-brand-bg2">
       {/* Section header */}
       <div className="px-8 md:px-16 pt-24 pb-0 border-b border-white/8" style={{ borderBottomColor: 'rgba(255,255,255,0.08)' }}>
         <div className="flex items-end justify-between pb-8">

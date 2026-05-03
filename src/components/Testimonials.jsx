@@ -51,7 +51,7 @@ export default function Testimonials() {
   return (
     <section
       id="reviews"
-      className="relative bg-[rgb(14,14,14)] border-t"
+      className="relative bg-brand-bg2 border-t"
       style={{ borderColor: 'rgba(255,255,255,0.08)' }}
     >
       {/* Faint vertical rule decoration */}
@@ -101,13 +101,13 @@ export default function Testimonials() {
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         className="px-8 md:px-16 pb-24 grid grid-cols-1 md:grid-cols-3 gap-px"
-        style={{ background: 'rgba(22, 22, 22, 1)' }}
+        style={{ background: 'var(--bg-primary)' }}
       >
         {reviews.map((review) => (
           <motion.div
             key={review.id}
             variants={cardVariants}
-            className="group relative flex flex-col justify-between bg-[rgb(14,14,14)] p-8 md:p-10 transition-colors duration-300 hover:bg-[rgb(14,14,14)]/80"
+            className="group relative flex flex-col justify-between bg-brand-bg2 p-8 md:p-10 transition-colors duration-300 hover:bg-brand-bg1"
           >
             {/* Ghost index number */}
             <span

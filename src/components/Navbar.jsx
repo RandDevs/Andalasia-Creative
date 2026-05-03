@@ -30,7 +30,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-6 transition-all duration-500 ${scrolled
-            ? 'backdrop-blur-xl bg-zinc-950/60 border-b border-white/5'
+            ? 'backdrop-blur-xl bg-brand-bg2/60 border-b border-white/5'
             : 'bg-transparent'
           }`}
       >
@@ -90,7 +90,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-40 bg-zinc-950/98 backdrop-blur-xl flex flex-col items-center justify-center gap-10 md:hidden"
+            className="fixed inset-0 z-40 bg-brand-bg2/98 backdrop-blur-xl flex flex-col items-center justify-center gap-10 md:hidden"
           >
             {links.map((link, i) => (
               <motion.a
