@@ -10,7 +10,7 @@ export default function LetsTalk() {
     <section id="about">
       {/* About blurb */}
       <div
-        className="px-8 md:px-16 py-24 grid md:grid-cols-2 gap-16 border-b border-white/15 bg-brand-bg2"
+        className="px-8 md:px-16 py-24 grid md:grid-cols-2 gap-8 md:gap-16 border-b border-white/15 bg-brand-bg2"
         style={{ borderBottomColor: 'rgba(255,255,255,0.08)' }}
       >
         <motion.div
@@ -25,7 +25,7 @@ export default function LetsTalk() {
           <h2
             className="font-syne font-bold text-white text-3xl md:text-5xl leading-[1.2] tracking-wide"
           >
-            We turn visions into<br />living experiences.
+            We turn visions into<br className='hidden md:block' /> living experiences.
           </h2>
         </motion.div>
         <motion.div
