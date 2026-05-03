@@ -73,7 +73,7 @@ export default function Testimonials() {
               Client Voices
             </span>
             <h2
-              className="font-syne font-extrabold text-white text-5xl md:text-7xl"
+              className="font-syne font-extrabold text-white text-4xl md:text-7xl"
               style={{ letterSpacing: '-0.03em', lineHeight: 0.9 }}
             >
               What They<br />Say.
@@ -100,14 +100,14 @@ export default function Testimonials() {
         variants={containerVariants}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
-        className="px-8 md:px-16 pb-24 grid grid-cols-1 md:grid-cols-3 gap-px"
+        className="px-8 md:px-16 pb-24 grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-px"
         style={{ background: 'var(--bg-primary)' }}
       >
         {reviews.map((review) => (
           <motion.div
             key={review.id}
             variants={cardVariants}
-            className="group relative flex flex-col justify-between bg-brand-bg2 p-8 md:p-10 transition-colors duration-300 hover:bg-brand-bg1"
+            className="group relative flex flex-col justify-between bg-brand-bg2 p-8 md:p-10 transition-colors duration-300 border border-brand-bg2 hover:bg-brand-bg1 hover:border-gray-400/15 "
           >
             {/* Ghost index number */}
             <span

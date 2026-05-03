@@ -125,7 +125,7 @@ function GalleryModal({ onClose }) {
       className="fixed inset-0 z-[100] flex flex-col bg-brand-bg2/95 backdrop-blur-md"
     >
       {/* ── Sticky top bar: header + mobile pills ── */}
-      <div className="sticky top-0 z-50 w-full shrink-0 bg-brand-bg1/70 backdrop-blur-md border-b" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+      <div className="sticky top-0 z-50 w-full shrink-0 bg-[#202020]/85 backdrop-blur-md border-b" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
         {/* Main header row */}
         <div className="flex items-center justify-between px-6 md:px-12 pt-8 pb-4">
           {/* Title + count */}

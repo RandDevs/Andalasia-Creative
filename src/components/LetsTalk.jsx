@@ -23,7 +23,7 @@ export default function LetsTalk() {
             About Us
           </span>
           <h2
-            className="font-syne font-bold text-white text-4xl md:text-5xl leading-[1.2] tracking-wide"
+            className="font-syne font-bold text-white text-3xl md:text-5xl leading-[1.2] tracking-wide"
           >
             We turn visions into<br />living experiences.
           </h2>
@@ -52,7 +52,7 @@ export default function LetsTalk() {
       {/* LET'S TALK */}
       <div
         ref={ref}
-        className="relative px-8 md:px-16 py-20 md:py-28 overflow-hidden flex flex-col items-start w-full bg-brand-bg1"
+        className="relative px-8 md:px-16 py-16 md:py-28 overflow-hidden flex flex-col items-start w-full bg-brand-bg1"
       >
         {/* Large background text */}
         <div
@@ -93,7 +93,7 @@ export default function LetsTalk() {
             href="mailto:pdamaraputra@andalasiacreative.com"
             whileHover={{ x: 6 }}
             transition={{ type: 'spring', stiffness: 300 }}
-            className="group inline-flex items-center gap-2 md:gap-4 w-fit max-w-full border border-gray-700 rounded-sm px-4 py-3 sm:px-8 sm:py-4 md:px-12 md:py-5 font-inter text-[10px] sm:text-xs md:text-base font-semibold tracking-wider sm:tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-colors duration-300 mt-4 mb-20"
+            className="group inline-flex items-center gap-2 md:gap-4 w-fit max-w-full border border-gray-700 rounded-sm px-5 py-4 sm:px-8 sm:py-4 md:px-12 md:py-5 font-inter text-[10px] sm:text-xs md:text-base font-semibold tracking-wider sm:tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-colors duration-300 mt-4 mb-12 md:mb-20"
           >
             <span className="break-all text-center leading-relaxed uppercase ">pdamaraputra@andalasiacreative.com</span>
             <ExternalLink size={16} strokeWidth={1.5} className="group-hover:rotate-45 transition-transform duration-300 flex-shrink-0" />
@@ -106,10 +106,9 @@ export default function LetsTalk() {
       {/* Fat Footer */}
       <footer className="relative px-8 md:px-16 w-full font-inter bg-brand-bg2">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pt-20">
-
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-12 pt-20">
           {/* Column 1: Brand & Address */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <h3 className="text-xl font-bold tracking-widest text-white mb-6 uppercase">
               ANDALASIA CREATIVE
             </h3>

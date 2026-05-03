@@ -57,7 +57,7 @@ function ServiceCard({ service, index }) {
       variants={containerVariants}
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
-      className={`px-8 md:px-16 py-16 md:py-24 flex flex-col bg-brand-bg2 ${index === 1 ? 'md:border-l border-white/8' : ''
+      className={`px-8 md:px-16 py-16 md:py-24 flex flex-col bg-brand-bg2 ${index === 1 ? 'border md:border-0 md:border-l border-white/8' : 'md:border-0 border-white/8 border'
         }`}
       style={{ borderColor: 'rgba(255,255,255,0.08)' }}
     >

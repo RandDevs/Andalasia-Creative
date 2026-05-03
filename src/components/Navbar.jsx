@@ -30,8 +30,8 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-6 transition-all duration-500 ${scrolled
-            ? 'backdrop-blur-xl bg-brand-bg2/60 border-b border-white/5'
-            : 'bg-transparent'
+          ? 'backdrop-blur-xl bg-brand-bg2/60 border-b border-white/5'
+          : 'bg-transparent'
           }`}
       >
         {/* Logo */}
@@ -112,7 +112,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.3 }}
-              className="mt-4 font-syne text-xs tracking-[0.2em] uppercase border border-white/30 text-white/60 px-6 py-3"
+              className="mt-4 font-syne text-xs tracking-[0.2em] uppercase border border-white/30 text-white/60 px-6 py-3 hover:border-white/80 hover:text-white transition-colors duration-300"
             >
               Let's Talk
             </motion.a>
