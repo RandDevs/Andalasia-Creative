@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { handleEmailClick } from '../utils/email';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -54,7 +55,8 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="mailto:hello@andalasiacreative.co"
+          href="#"
+          onClick={handleEmailClick}
           className="hidden md:block font-syne text-xs tracking-[0.15em] uppercase border border-white/20 text-white/70 px-5 py-2.5 hover:border-white/80 hover:text-white transition-all duration-300"
           style={{ letterSpacing: '0.15em' }}
         >
@@ -107,7 +109,11 @@ export default function Navbar() {
               </motion.a>
             ))}
             <motion.a
-              href="mailto:pdamaraputra@andalasiacreative.com"
+              href="#"
+              onClick={(e) => {
+                handleEmailClick(e);
+                setMenuOpen(false);
+              }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

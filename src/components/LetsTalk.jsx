@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-
+import { handleEmailClick } from '../utils/email';
 export default function LetsTalk() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
@@ -90,7 +90,8 @@ export default function LetsTalk() {
 
           {/* Minimalist Email CTA */}
           <motion.a
-            href="mailto:pdamaraputra@andalasiacreative.com"
+            href="#"
+            onClick={handleEmailClick}
             whileHover={{ x: 6 }}
             transition={{ type: 'spring', stiffness: 300 }}
             className="group inline-flex items-center gap-2 md:gap-4 w-fit max-w-full border border-gray-700 rounded-sm px-5 py-4 sm:px-8 sm:py-4 md:px-12 md:py-5 font-inter text-[10px] sm:text-xs md:text-base font-semibold tracking-wider sm:tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-colors duration-300 mt-4 mb-12 md:mb-20"
@@ -132,7 +133,7 @@ export default function LetsTalk() {
           <div>
             <h3 className="text-white font-semibold mb-6">Contact</h3>
             <div className="flex flex-col gap-4">
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pdamaraputra@andalasiacreative.com" target="_blank" rel="noreferrer" className="group flex w-fit items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300 text-sm">
+              <a href="#" onClick={handleEmailClick} className="group flex w-fit items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300 text-sm">
                 <span>Email</span>
                 <span className="text-sm transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
               </a>

@@ -112,7 +112,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.9, duration: 0.6 }}
-          className="md:hidden font-inter text-xs text-gray-400 leading-relaxed tracking-wide mt-8 max-w-sm"
+          className="md:hidden font-inter text-sm text-gray-400 leading-relaxed tracking-wide mt-8 max-w-sm"
         >
           Creating immersive events and high-quality<br />visual storytelling that leaves a lasting impression.
         </motion.p>
